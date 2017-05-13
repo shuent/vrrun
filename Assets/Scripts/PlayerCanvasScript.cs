@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class PlayerCanvasScript : MonoBehaviour {
 
+	static public GameObject playerCanvas;
+
+	void Awake(){
+		playerCanvas = this.gameObject;
+		gameObject.SetActive (false);
+	}
+
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,10 +25,7 @@ public class PlayerCanvasScript : MonoBehaviour {
 	}
 
 	void FixPosition(){
-		Vector3 pos = transform.position;
-		pos.x = -3 + Camera.main.transform.position.x;
-		pos.y = 0 + Camera.main.transform.position.y;
-		pos.z = 0 + Camera.main.transform.position.z;
-		transform.position = pos;
+		transform.position = Camera.main.transform.position + new Vector3(-3,1,0);
 	}
+
 }

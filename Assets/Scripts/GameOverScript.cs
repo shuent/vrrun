@@ -2,20 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOverScript : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 		if (other.tag == "Player") {
 			Debug.Log ("player collided gameover");
-			StopPlayer (other.gameObject);
-			// if Restart button
-			//     Timescale = 1;
+			Excute (other.gameObject);
 		}
 	}
 
-	void StopPlayer(GameObject player){
-		Time.timeScale = 0;
-		// player.GetComponent<Rigidbody> ().velocity = new Vector3(0, 0, 0);
+	void Excute(GameObject player){
+		Time.timeScale = 0; // stop time scale
+		Debug.Log(PlayerCanvasScript.playerCanvas);
+		PlayerCanvasScript.playerCanvas.SetActive (true);
+		PlayerCanvasScript.playerCanvas.GetComponentInChildren<Text> ().text = "GameOver";
+
 	}
 }
