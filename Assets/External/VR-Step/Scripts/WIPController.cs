@@ -214,7 +214,6 @@ namespace VRStep
 				Vector3 curVel = _rigidbody.velocity;
 				curVel.y = jumpVelociry;
 				_rigidbody.velocity = curVel;
-
 				onGround = false;
 				dampingEnabled = false;
 			}

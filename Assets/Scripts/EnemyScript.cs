@@ -17,6 +17,10 @@ public class EnemyScript : MonoBehaviour {
 	void OnCollisionEnter(Collision other){
 		if (other.gameObject.tag == "Player") {
 			Debug.Log ("collided with enemy");
+			Destroy (this.gameObject);
+			other.gameObject.SendMessage ("HitEnemy");
+			other.gameObject.transform.localScale = new Vector3 (0.6f, 0.6f, 0.6f);
+
 		}
 	}
 }

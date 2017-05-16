@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerCustomScript : MonoBehaviour {
 
+	private int playerHP = 2;
+	void Awake(){
+	}
+
 	// Use this for initialization
 	void Start () {
 		
@@ -28,6 +32,15 @@ public class PlayerCustomScript : MonoBehaviour {
 			}
 		}
 	}
+
+	void HitEnemy (){
+		playerHP -= 1;
+		Debug.Log ("hp " + playerHP);
+		if (playerHP <= 0) {
+			GameOverScript.Excute (this.gameObject);
+		}
+	}
+
 
 
 

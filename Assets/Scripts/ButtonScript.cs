@@ -10,4 +10,6 @@ public class ButtonScript : MonoBehaviour {
 		SceneManager.LoadScene(0);
 		Time.timeScale = 1;
 	}
+
+
 }

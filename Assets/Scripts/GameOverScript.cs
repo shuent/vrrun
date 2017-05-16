@@ -13,7 +13,7 @@ public class GameOverScript : MonoBehaviour {
 		}
 	}
 
-	void Excute(GameObject player){
+	static public void Excute(GameObject player){
 		Time.timeScale = 0; // stop time scale
 		Debug.Log(PlayerCanvasScript.playerCanvas);
 		PlayerCanvasScript.playerCanvas.SetActive (true);
