@@ -19,6 +19,8 @@ public class isSteppedCollider : MonoBehaviour {
 			Debug.Log ("this is stepped1");
 			var _parent = transform.root.gameObject;
 			Destroy (_parent);
+
+			other.gameObject.SendMessage ("StepEnemySound");
 		}
 	}
 }

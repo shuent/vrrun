@@ -5,12 +5,23 @@ using UnityEngine;
 public class PlayerCustomScript : MonoBehaviour {
 
 	private int playerHP = 2;
+
+	private AudioSource damage;
+	private AudioSource stepEnemy;
+
+
 	void Awake(){
 	}
 
 	// Use this for initialization
 	void Start () {
 		
+		AudioSource[] audioSources = GetComponents<AudioSource>();
+		damage = audioSources[1];
+		stepEnemy = audioSources[2];
+
+
+		//sePyon = audioSources[1];
 	}
 	
 	// Update is called once per frame
@@ -34,11 +45,17 @@ public class PlayerCustomScript : MonoBehaviour {
 	}
 
 	void HitEnemy (){
+
+		damage.Play();
 		playerHP -= 1;
 		Debug.Log ("hp " + playerHP);
 		if (playerHP <= 0) {
-			GameOverScript.Excute (this.gameObject);
+			GameOverScript.instance.Excute (this.gameObject);
 		}
+	}
+
+	void StepEnemySound(){
+		stepEnemy.Play ();
 	}
 
 

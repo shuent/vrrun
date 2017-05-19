@@ -19,7 +19,7 @@ public class EnemyScript : MonoBehaviour {
 			Debug.Log ("collided with enemy");
 			Destroy (this.gameObject);
 			other.gameObject.SendMessage ("HitEnemy");
-			other.gameObject.transform.localScale = new Vector3 (0.6f, 0.6f, 0.6f);
+			other.gameObject.transform.localScale = new Vector3 (0.7f, 0.7f, 0.7f);
 
 		}
 	}
